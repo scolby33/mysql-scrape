@@ -92,6 +92,6 @@ Some possible improvements would be:
 - Allowing multiple arguments to be passed to scrape multiple possible servers
   in parallel, or even a flexible target specification, perhaps similar to nmap,
   for scraping a large number of servers at a time
-- Adding much more error handling: the number of `res, _ := FailibileFunction()`
+- Adding much more error handling: the number of `res, _ := FallibleFunction()`
   in the code is probably a bit high for good safety, although I think I avoided
   most obvious possible malicious packets with good length checks
