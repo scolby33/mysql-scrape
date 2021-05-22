@@ -95,3 +95,13 @@ Some possible improvements would be:
 - Adding much more error handling: the number of `res, _ := FallibleFunction()`
   in the code is probably a bit high for good safety, although I think I avoided
   most obvious possible malicious packets with good length checks
+
+## Reference Material
+
+The documentation I consulted while building this was mainly:
+
+- https://dev.mysql.com/doc/internals/en/mysql-packet.html
+- https://dev.mysql.com/doc/internals/en/describing-packets.html
+- https://dev.mysql.com/doc/internals/en/connection-phase.html
+- https://dev.mysql.com/doc/internals/en/connection-phase-packets.html#packet-Protocol::Handshake
+- https://dev.mysql.com/doc/internals/en/packet-ERR_Packet.html
