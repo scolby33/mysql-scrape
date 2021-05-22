@@ -6,6 +6,9 @@ there.
 ## Usage
 
 ```console
+$ git clone https://github.com/scolby33/mysql-scrape
+$ cd mysql-scrape
+$ go build
 $ ./mysql-scrape localhost:3306
 ```
 
