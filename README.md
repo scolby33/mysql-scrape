@@ -18,7 +18,8 @@ a single `:`, followed by the set of flags, one per line, with a single leading
 tab character.
 
 If nothing is listening, or something other than a MySQL server is listening,
-the program will exit with a non-zero code.
+the program will exit with a non-zero code. Exit codes follow the values from
+[OpenBSD's `sysexits(3)`.](https://man.openbsd.org/sysexits)
 
 ### Example Output
 
