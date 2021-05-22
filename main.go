@@ -272,6 +272,9 @@ Usage:
         fmt.Fprintln(os.Stderr, "Payload length too large for protocol. Malicious packet? %d", payload_length)
         return EX_PROTOCOL
     }
+
+    // using the sequence number doesn't seem necessary since we only care about
+    // the first packet
     //sequence_number, _ := decodeFixedLengthInteger(header_buf[3:])
 
     payload_buf := make([]byte, payload_length)
