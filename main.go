@@ -268,6 +268,10 @@ Usage:
         return EX_PROTOCOL
     }
     payload_length, _ := decodeFixedLengthInteger(header_buf[:3])
+    if payload_length > (1 << 24) - 1 {
+        fmt.Fprintln(os.Stderr, "Payload length too large for protocol. Malicious packet? %d", payload_length)
+        return EX_PROTOCOL
+    }
     //sequence_number, _ := decodeFixedLengthInteger(header_buf[3:])
 
     payload_buf := make([]byte, payload_length)
