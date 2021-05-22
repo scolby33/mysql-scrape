@@ -75,6 +75,15 @@ $ echo $?
 68
 ```
 
+## Testing
+
+A few tests have been implemented for the `decodeFixedLengthInteger` function.
+These can be run with `go test`. The rest of the functionality has been tested
+manually, using various versions of MySQL running locally in Docker, and also
+against non-MySQL listeners such as `python -m http.server` and `nc -l 5000`.
+Further unit tests for the packet-parsing code should definitely be added; see
+below for other possible improvements.
+
 ## Possible Improvements
 
 This program was written with the minimum necessary functionality to demonstrate
