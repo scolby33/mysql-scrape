@@ -47,6 +47,7 @@ const (
     CLIENT_DEPRECATE_EOF
 )
 
+// Given a CapabilityFlag bitfield, print each of the set flag names.
 func printCapabilityFlags(flags CapabilityFlag) {
     for i := CapabilityFlag(1); i < (1 << 63); i = i << 1 {
         flag := flags & i
@@ -76,6 +77,7 @@ const (
     SERVER_SESSION_STATE_CHANGED
 )
 
+// Given a StatusFlag bitfield, print each of the set flag names.
 func printStatusFlags(flags StatusFlag) {
     for i := StatusFlag(1); i < (1 << 7); i = i << 1 {
         flag := flags & i
@@ -132,6 +134,8 @@ const (
     utf8mb4  CharacterSet = 255
 )
 
+// Decode a fixed-lengh integer as used by the MySQL packet spec
+// These are little-endian integers of 1, 2, 3, 4, 6, or 8 bytes
 func decodeFixedLengthInteger(data []byte) (uint64, error) {
     l := len(data)
     if !(l == 1 || l == 2 || l == 3 || l == 4 || l == 6 || l == 8) {
